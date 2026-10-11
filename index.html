@@ -1,1 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="Style.css">
+
+<script src="Script.js"></script>
+
+<title>SADA MARKET</title>
+
+</head>
+
+<body>
+
+
+<!-- IMAGE VIEWER -->
+
+<div id="imageViewer" onclick="closeImage()">
+
+    <img id="bigImage" alt="Product Image">
+
+</div>
+
+
+<!-- SEARCH + CART -->
+
+<div class="top-actions">
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search ..."
+            onkeyup="searchProducts()"
+        >
+
+        <button type="button" onclick="searchProducts()">
+            🔍
+        </button>
+
+    </div>
+
+    <button
+        type="button"
+        class="cart-button"
+        onclick="toggleCart()">
+
+        🛒(<span id="cartCount">0</span>)
+
+    </button>
+
+</div>
+
+
+
+
+
+<!-- CART -->
+
+<div id="cart">
+
+    <h2>🛒 Your Cart</h2>
+
+    <div id="cartItems">
+
+        <p>Your cart is empty.</p>
+
+    </div>
+
+    <h3>
+        Total: PKR
+        <span id="cartTotal">0</span>
+    </h3>
+
+    <button
+        type="button"
+        onclick="openCheckout()">
+
+        Checkout
+
+    </button>
+
+    <button
+        type="button"
+        class="close-btn"
+        onclick="toggleCart()">
+
+        Close
+
+    </button>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+<div class="brand">
+    <button class="menu-btn">☰</button>
+  
+    <span>SADA~MARKET</span>
+</div>
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#men" onclick="goCategory('men')">
+            Men
+        </a>
+
+        <a href="#women" onclick="goCategory('women')">
+            Women
+        </a>
+
+        <a href="#sports" onclick="goCategory('sports')">
+            Sports
+        </a>
+
+        <a href="#casual" onclick="goCategory('casual')">
+            Casual
+        </a>
+
+        <a href="#sandals" onclick="goCategory('sandals')">
+            Sandals
+        </a>
+
+        <a href="#boots" onclick="goCategory('boots')">
+            Boots
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <h2>
+
+            <span class="new-text">New</span>
+
+            <span class="summer-text">SUMMER</span>
+
+            <span class="collection-text">COLLECTION</span>
+
+        </h2>
+
+        <p>Step Into Style & Comfort</p>
+
+        <button
+            type="button"
+            onclick="goCategory('sports')">
+
+            Shop Now
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- SHOP BY CATEGORY -->
+
+<section class="category-section">
+
+    <h2>Shop By Category</h2>
+
+    <div class="category-container">
+
+
+        <div
+            class="category-card"
+            onclick="goCategory('men')">
+
+            <img
+                src="Images/running3.jpg"
+                alt="Men's Shoes">
+
+            <h3>Men's Shoes</h3>
+
+        </div>
+
+
+        <div
+            class="category-card"
+            onclick="goCategory('women')">
+
+            <img
+                src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=500&q=80"
+                alt="Women's Shoes">
+
+            <h3>Women's Shoes</h3>
+
+        </div>
+
+
+        <div
+            class="category-card"
+            onclick="goCategory('sports')">
+
+            <img
+                src="https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=500&q=80"
+                alt="Sports Shoes">
+
+            <h3>Sports Shoes</h3>
+
+        </div>
+
+
+        <div
+            class="category-card"
+            onclick="goCategory('casual')">
+
+            <img
+                src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=500&q=80"
+                alt="Casual Shoes">
+
+            <h3>Casual Shoes</h3>
+
+        </div>
+
+
+        <div
+            class="category-card"
+            onclick="goCategory('sandals')">
+
+            <img
+                src="https://images.unsplash.com/photo-1603487742131-4160ec999306?auto=format&fit=crop&w=500&q=80"
+                alt="Sandals">
+
+            <h3>Sandals</h3>
+
+        </div>
+
+
+        <div
+            class="category-card"
+            onclick="goCategory('boots')">
+
+            <img
+                src="Images/boots.jpg"
+                alt="Boots">
+
+            <h3>Boots</h3>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- FEATURED PRODUCTS -->
+
+<section id="products">
+
+    <h2>Featured Products</h2>
+
+
+    <!-- MEN -->
+
+    <div class="product-category" id="men">
+
+        <h3 class="category-title">
+            👞 Men's Shoes
+        </h3>
+
+        <div class="product-row">
+
+
+            <!-- MEN PRODUCT 1 -->
+
+            <div
+                class="product"
+                data-name="Sports Sneakers"
+                data-category="men sports">
+
+                <div class="sneaker-gallery">
+
+                    <img
+                        src="Images/sneaker2.jpg"
+                        alt="Sports Sneakers"
+                        onclick="openImage(this.src)">
+
+                </div>
+
+                <h3>Sports Sneakers</h3>
+
+                <div class="product-rating">
+
+                    <span class="stars">★★★★★</span>
+
+                    <span class="rating-number">4.8</span>
+
+                </div>
+
+                <p>PKR 3999</p>
+
+                <button
+                    onclick="addProduct('Sports Sneakers',3999)">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- MEN PRODUCT 2 -->
+
+            <div
+                class="product"
+                data-name="Casual Sneakers"
+                data-category="men casual">
+
+                <img
+                    src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80"
+                    alt="Casual Sneakers"
+                    onclick="openImage(this.src)">
+
+                <h3>Casual Sneakers</h3>
+
+                <div class="product-rating">
+
+                    <span class="stars">★★★★★</span>
+
+                    <span class="rating-number">4.6</span>
+
+                </div>
+
+                <p>PKR 3199</p>
+
+                <button
+                    onclick="addProduct('Casual Sneakers',3199)">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- MEN PRODUCT 3 -->
+
+            <div
+                class="product"
+                data-name="Casual Sneakers"
+                data-category="men casual">
+
+                <img
+                    src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80"
+                    alt="Casual Sneakers"
+                    onclick="openImage(this.src)">
+
+                <h3>Casual Sneakers</h3>
+
+                <div class="product-rating">
+
+                    <span class="stars">★★★★★</span>
+
+                    <span class="rating-number">4.6</span>
+
+                </div>
+
+                <p>PKR 3199</p>
+
+                <button
+                    onclick="addProduct('Casual Sneakers',3199)">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- MEN PRODUCT 4 -->
+
+            <div
+                class="product"
+                data-name="Men Sandal"
+                data-category="men sandals">
+
+                <img
+                    src="https://images.unsplash.com/photo-1603487742131-4160ec999306?auto=format&fit=crop&w=600&q=80"
+                    alt="Men Sandal"
+                    onclick="openImage(this.src)">
+
+                <h3>Men Sandal</h3>
+
+                <div class="product-rating">
+
+                    <span class="stars">★★★★☆</span>
+
+                    <span class="rating-number">4.4</span>
+
+                </div>
+
+                <p>PKR 2299</p>
+
+                <button
+                    onclick="addProduct('Men Sandal',2299)">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- WOMEN -->
+
+    <div class="product-category" id="women">
+
+        <h3 class="category-title">
+            👠 Women's Shoes
+        </h3>
+
+        <div class="product-row">
+
+
+            <!-- WOMEN PRODUCT 1 -->
+
+            <div
+                class="product"
+                data-name="Women's Shoes"
+                data-category="women">
+
+                <img
+                    src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80"
+                    alt="Women's Shoes"
+                    onclick="openImage(this.src)">
+
+                <h3>Women's Shoes</h3>
+
+                <div class="product-rating">
+
+                    <span class="stars">★★★★★</span>
+
+                    <span class="rating-number">4.9</span>
+
+                </div>
+
+                <p>PKR 3499</p>
+
+                <button
+                    onclick="addProduct('Women Shoes',3499)">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- WOMEN PRODUCT 2 -->
+
+            <div
+                class="product"
+                data-name="Women Casual Shoes"
+                data-category="women casual">
+
+                <img
+                    src="Images/women casual.jpg"
+                    alt="Women Casual Shoes"
+                    onclick="openImage(this.src)">
+
+                <h3>Women Casual Shoes</h3>
+
+                <div class="product-rating">
+
+                    <span class="stars">★★★★★</span>
+
+                    <span class="rating-number">4.7</span>
+
+                </div>
+
+                <p>PKR 3699</p>
+
+                <button
+                    onclick="addProduct('Women Casual Shoes',3699)">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- WOMEN PRODUCT 3 -->
+
+            <div
+                class="product"
+                data-name="Women Casual Shoes 2"
+                data-category="women casual">
+
+                <img
+                    src="Images/women casual2.jpg"
+                    alt="Women Casual Shoes"
+                    onclick="openImage(this.src)">
+
+                <h3>Women Casual Shoes</h3>
+
+                <div class="product-rating">
+
+                    <span class="stars">★★★★★</span>
+
+                    <span class="rating-number">4.7</span>
+
+                </div>
+
+                <p>PKR 3699</p>
+
+                <button
+                    onclick="addProduct('Women Casual Shoes 2',3699)">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- WOMEN PRODUCT 4 -->
+
+            <div
+                class="product"
+                data-name="Women Sneakers"
+                data-category="women sports">
+
+                <img
+                    src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=600&q=80"
+                    alt="Women Sneakers"
+                    onclick="openImage(this.src)">
+
+                <h3>Women Sneakers</h3>
+
+                <div class="product-rating">
+
+                    <span class="stars">★★★★★</span>
+
+                    <span class="rating-number">4.8</span>
+
+                </div>
+
+                <p>PKR 3999</p>
+
+                <button
+                    onclick="addProduct('Women Sneakers',3999)">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- SPORTS -->
+
+    <div class="product-category" id="sports">
+
+        <h3 class="category-title">
+            👟 Sports Shoes
+        </h3>
+
+        <div class="product-row">
+
+
+            <!-- SPORTS PRODUCT 1 -->
+
+            <div
+                class="product"
+                data-name="Sports Sneakers"
+                data-category="sports men">
+
+                <div class="sneaker-gallery">
+
+                    <img
+                        src="Images/sneaker1.jpg"
+                        alt="Sports Sneakers"
+                        onclick="openImage(this.src)">
+
+                </div>
+
+                <h3>Sports Sneakers</h3>
+
+                <div class="product-rating">
+
+                    <span class="stars">★★★★★</span>
+
+                    <span class="rating-number">4.8</span>
+
+                </div>
+
+                <p>PKR 3999</p>
+
+                <button
+                    onclick="addProduct('Sports Sneakers',3999)">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- SPORTS PRODUCT 2 -->
+
+            <div
+                class="product"
+                data-name="Running Shoes 3"
+                data-category="sports">
+
+                <img
+                    src="Images/running3.jpg"
+                    alt="Running Shoes"
+                    onclick="openImage(this.src)">
+
+                <h3>Running Shoes</h3>
+
+                <div class="product-rating">
+
+                    <span class="stars">★★★★★</span>
+
+                    <span class="rating-number">4.7</span>
+
+                </div>
+
+                <p>PKR 4299</p>
+
+                <button
+                    onclick="addProduct('Running Shoes 3',4299)">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- SPORTS PRODUCT 3 -->
+
+            <div
+                class="product"
+                data-name="Running Shoes 1"
+                data-category="sports">
+
+                <img
+                    src="Images/running1.jpg"
+                    alt="Running Shoes"
+                    onclick="openImage(this.src)">
+
+                <h3>Running Shoes</h3>
+
+                <div class="product-rating">
+
+                    <span class="stars">★★★★★</span>
+
+                    <span class="rating-number">4.7</span>
+
+                </div>
+
+                <p>PKR 4299</p>
+
+                <button
+                    onclick="addProduct('Running Shoes 1',4299)">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- SPORTS PRODUCT 4 -->
+
+            <div
+                class="product"
+                data-name="Training Shoes"
+                data-category="sports">
+
+                <img
+                    src="https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=600&q=80"
+                    alt="Training Shoes"
+                    onclick="openImage(this.src)">
+
+                <h3>Training Shoes</h3>
+
+                <div class="product-rating">
+
+                    <span class="stars">★★★★☆</span>
+
+                    <span class="rating-number">4.5</span>
+
+                </div>
+
+                <p>PKR 4499</p>
+
+                <button
+                    onclick="addProduct('Training Shoes',4499)">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- CASUAL -->
+
+    <div class="product-category" id="casual">
+
+        <h3 class="category-title">
+            👟 Casual Shoes
+        </h3>
+
+        <div class="product-row">
+
+
+            <!-- CASUAL PRODUCT 1 -->
+
+            <div
+                class="product"
+                data-name="Casual Sneakers"
+                data-category="casual men">
+
+                <img
+                    src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80"
+                    alt="Casual Sneakers"
+                    onclick="openImage(this.src)">
+
+                <h3>Casual Sneakers</h3>
+
+                <div class="product-rating">
+
+                    <span class="stars">★★★★★</span>
+
+                    <span class="rating-number">4.6</span>
+
+                </div>
+
+                <p>PKR 3199</p>
+
+                <button
+                    onclick="addProduct('Casual Sneakers',3199)">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- CASUAL PRODUCT 2 -->
+
+            <div
+                class="product"
+                data-name="Casual Shoes"
+                data-category="casual">
+
+                <img
+                    src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=600&q=80"
+                    alt="Casual Shoes"
+                    onclick="openImage(this.src)">
+
+                <h3>Casual Shoes</h3>
+
+                <div class="product-rating">
+
+                    <span class="stars">★★★★★</span>
+
+                    <span class="rating-number">4.6</span>
+
+                </div>
+
+                <p>PKR 3399</p>
+
+                <button
+                    onclick="addProduct('Casual Shoes',3399)">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- SANDALS -->
+
+    <div class="product-category" id="sandals">
+
+        <h3 class="category-title">
+            🩴 Sandals
+        </h3>
+
+        <div class="product-row">
+
+
+            <!-- SANDAL PRODUCT 1 -->
+
+            <div
+                class="product"
+                data-name="Men Sandal"
+                data-category="sandals men">
+
+                <img
+                    src="https://images.unsplash.com/photo-1603487742131-4160ec999306?auto=format&fit=crop&w=600&q=80"
+                    alt="Men Sandal"
+                    onclick="openImage(this.src)">
+
+                <h3>Men Sandal</h3>
+
+                <div class="product-rating">
+
+                    <span class="stars">★★★★☆</span>
+
+                    <span class="rating-number">4.4</span>
+
+                </div>
+
+                <p>PKR 2299</p>
+
+                <button
+                    onclick="addProduct('Men Sandal',2299)">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- SANDAL PRODUCT 2 -->
+
+            <div
+                class="product"
+                data-name="Ladies Sandal"
+                data-category="sandals women">
+
+                <img
+                    src="https://images.unsplash.com/photo-1562273138-f46be4ebdf33?auto=format&fit=crop&w=600&q=80"
+                    alt="Ladies Sandal"
+                    onclick="openImage(this.src)">
+
+                <h3>Ladies Sandal</h3>
+
+                <div class="product-rating">
+
+                    <span class="stars">★★★★☆</span>
+
+                    <span class="rating-number">4.5</span>
+
+                </div>
+
+                <p>PKR 2499</p>
+
+                <button
+                    onclick="addProduct('Ladies Sandal',2499)">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- BOOTS -->
+
+    <div class="product-category" id="boots">
+
+        <h3 class="category-title">
+            🥾 Boots
+        </h3>
+
+        <div class="product-row">
+
+
+            <!-- BOOTS PRODUCT 1 -->
+
+            <div
+                class="product"
+                data-name="Lindy Boots"
+                data-category="boots men">
+
+                <img
+                    src="https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=600&q=80"
+                    alt="Lindy Boots"
+                    onclick="openImage(this.src)">
+
+                <h3>Lindy Boots</h3>
+
+                <div class="product-rating">
+
+                    <span class="stars">★★★★★</span>
+
+                    <span clclass="rating-number">4.8</span>
+
+                </div>
+
+                <p>PKR 5499</p>
+
+                <button
+                    onclick="addProduct('Lindy Boots',5499)">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- BOOTS PRODUCT 2 -->
+
+            <div
+                class="product"
+                data-name="Classic Boots"
+                data-category="boots">
+
+                <img
+                    src="Images/boots.jpg"
+                    alt="Classic Boots"
+                    onclick="openImage(this.src)">
+
+                <h3>Classic Boots</h3>
+
+                <div class="product-rating">
+
+                    <span class="stars">★★★★★</span>
+
+                    <span class="rating-number">4.7</span>
+
+                </div>
+
+                <p>PKR 5999</p>
+
+                <button
+                    onclick="addProduct('Classic Boots',5999)">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<!-- CHECKOUT -->
+
+<div id="checkout">
+
+    <h2>📦 Checkout</h2>
+
+    <input
+        type="text"
+        id="customerName"
+        placeholder="Your Name">
+
+    <input
+        type="tel"
+        id="customerPhone"
+        placeholder="Phone Number">
+
+    <input
+        type="text"
+        id="customerCity"
+        placeholder="City">
+
+    <textarea
+        id="customerAddress"
+        rows="4"
+        placeholder="Complete Address"></textarea>
+
+    <br><br>
+
+    <button
+        type="button"
+        class="order-btn"
+        onclick="placeOrder()">
+
+        📲 Place Order on WhatsApp
+
+    </button>
+
+    <br><br>
+
+    <button
+        type="button"
+        class="close-btn"
+        onclick="closeCheckout()">
+
+        Cancel
+
+    </button>
+
+</div>
+
+
+<!-- CONTACT US -->
+
+<section id="contact" class="contact-section">
+
+    <div class="contact-card">
+
+        <h2>Contact Us</h2>
+
+        <p class="contact-intro">
+            We're here to help. Feel free to contact us.
+        </p>
+
+        <div class="contact-details">
+
+            <div class="contact-line">
+
+                <span>📱</span>
+
+                <strong>WhatsApp:</strong>
+
+                <a
+                    href="https://wa.me/923041500185"
+                    target="_blank">
+
+                    0304-1500185
+
+                </a>
+
+            </div>
+
+
+            <div class="contact-line">
+
+                <span>📞</span>
+
+                <strong>Phone:</strong>
+
+                <a href="tel:+923348830863">
+
+                    03348830863
+
+                </a>
+
+            </div>
+
+
+            <div class="contact-line">
+
+                <span>📧</span>
+
+                <strong>Email:</strong>
+
+                <a href="mailto:rahatullah07866@gmail.com">
+
+                    rahatullah07866@gmail.com
+
+                </a>
+
+            </div>
+
+
+            <div class="contact-line">
+
+                <span>📍</span>
+
+                <strong>Location:</strong>
+
+                <span>Pakistan</span>
+
+            </div>
+
+
+            <div class="contact-line">
+
+                <span>🕐</span>
+
+                <strong>Working Hours:</strong>
+
+                <span>24 hour</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>SADA~MARKET</h3>
+
+    <p>Quality Shoes at Affordable Prices.</p>
+
+    <p>© 2026 SADA~MARKET. All Rights Reserved.</p>
+
+</footer>
+
+
+</body>
+
+</html>
